@@ -1,0 +1,12 @@
+env: dev
+
+iamrole: arn:aws:iam::341509711817:role/demo-serverless-lambda-role
+deploymentBucket: demo-serverless-lambda-bucket
+
+ENV_KAFKA_BROKERS: pkc-1dkx6.ap-southeast-1.aws.confluent.cloud:9092
+ENV_KAFKA_CLIENT_ID: dev-boilerplate-lambda-kafka-go
+ENV_KAFKA_CONSUMER_GROUP_ID: dev-boilerplate-lambda-kafka-go-consumer-group
+ENV_KAFKA_USERNAME:
+ENV_KAFKA_PASSWORD:
+ENV_KAFKA_TOPIC: dev_king-test-topic
+ENV_KAFKA_AUTH_SECRET_ARN: arn:aws:secretsmanager:ap-southeast-1:341509711817:secret:demo-dev-kafka-auth-qg3ac2
