@@ -1,0 +1,28 @@
+demo-schema:
+  handler: bootstrap
+  package:
+    individually: true
+    artifact: bin/demo-schema/bootstrap_demo-schema.zip
+  events:
+    - kafka:
+        accessConfigurations:
+          saslPlainAuth: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_AUTH_SECRET_ARN}
+        topic: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_TOPIC}
+        consumerGroupId: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_CONSUMER_GROUP_ID}
+        bootstrapServers:
+          - ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_BROKERS}
+        batchSize: 1
+        enabled: true
+        startingPosition: LATEST
+  environment:
+    IS_SERVERLESS: true
+    KAFKA_BROKERS: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_BROKERS}
+    KAFKA_CLIENT_ID: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_CLIENT_ID}
+    KAFKA_CONSUMER_GROUP_ID: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_CONSUMER_GROUP_ID}
+    KAFKA_USERNAME: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_USERNAME}
+    KAFKA_PASSWORD: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_PASSWORD}
+    KAFKA_TOPIC: ${file(./environment/${self:provider.stage}.yml):ENV_KAFKA_TOPIC_WITH_SCHEMA}
+    SCHEMA_REGISTRY_ENDPOINT: ${file(./environment/${self:provider.stage}.yml):ENV_SCHEMA_REGISTRY_ENDPOINT}
+    SCHEMA_REGISTRY_USERNAME: ${file(./environment/${self:provider.stage}.yml):ENV_SCHEMA_REGISTRY_USERNAME}
+    SCHEMA_REGISTRY_PASSWORD: ${file(./environment/${self:provider.stage}.yml):ENV_SCHEMA_REGISTRY_PASSWORD}
+    SCHEMA_REGISTRY_SUBJECT: ${file(./environment/${self:provider.stage}.yml):ENV_SCHEMA_REGISTRY_SUBJECT}

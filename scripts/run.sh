@@ -7,12 +7,6 @@ export KAFKA_USERNAME=
 export KAFKA_PASSWORD=
 export KAFKA_TOPIC=dev_king-test-topic
 
-export MYSQL_HOST=xx
-export MYSQL_PORT=3306
-export MYSQL_USERNAME=xx
-export MYSQL_PASSWORD=xx
-export MYSQL_DATABASE=xx
-
 export IS_OFFLINE=true 
 
 go run ./services/demo/.

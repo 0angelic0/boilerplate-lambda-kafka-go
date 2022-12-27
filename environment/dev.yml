@@ -10,3 +10,8 @@ ENV_KAFKA_USERNAME:
 ENV_KAFKA_PASSWORD:
 ENV_KAFKA_TOPIC: dev_king-test-topic
 ENV_KAFKA_AUTH_SECRET_ARN: arn:aws:secretsmanager:ap-southeast-1:341509711817:secret:demo-dev-kafka-auth-qg3ac2
+ENV_KAFKA_TOPIC_WITH_SCHEMA: dev_king-test-topic-with-schema
+ENV_SCHEMA_REGISTRY_ENDPOINT: https://psrc-znpo0.ap-southeast-2.aws.confluent.cloud
+ENV_SCHEMA_REGISTRY_USERNAME:
+ENV_SCHEMA_REGISTRY_PASSWORD:
+ENV_SCHEMA_REGISTRY_SUBJECT: dev_king-test-topic-with-schema-value
